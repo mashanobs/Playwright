@@ -1,0 +1,34 @@
+test.only  --> solo se ejecuta ese test
+test.skip  --> skipea el test, tambien se puede skipear con una condicion previa
+test.fixme --> skipea el test para poder fixearlo en el futuro
+test.fail  --> Obliga a pasar un test que falla
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@tags --> se le agrega un tag en la descripcion del test para poder agruparlos y luego ejecutarlos por linea de comandos
+
+### Test ###  
+  test.describe('Acciones en el Automation @Sandbox', () => { 
+    })
+
+### Comando ###   
+npx playwright test --grep @Sanbox
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+### Screenchot en el informe ### 
+   //Saca una screen y la adjunta aunque el caso pase.
+        await test.info().attach('screenshot', {
+          body: await page.screenshot(),
+          contentType: 'image/png',
+        })
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+### Modo UI ### 
+npx playwright test --ui
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+### Codegen ### 
+npx playwright codegen www.freerangetesters.com
